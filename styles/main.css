@@ -84,3 +84,52 @@ body{
 .button:hover{
     background-color: var(--color-organe-hover);
 }
+
+.guestbook-separator{
+    -webkit-appearance: none;
+    appearance: none;
+    /* Browser Agent OFF */
+    border: 0.03125rem solid var(--color-black);
+}
+
+.guestbook-entry{
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: var(--color-black);
+    border: 0.0625rem solid var(--color-black);
+    border-radius: 0.5rem;
+    margin-block: 1rem;
+}
+
+.guestbook-entry-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.guestbook-entry-title{
+    color: var(--color-orange);
+    font-weight: normal;
+    margin-block: 0;
+    font-size: 1.25rem;
+
+}
+
+.guestbook-entry-author{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50%;
+    text-align: right;
+}
+
+.guestbook-entry-content > p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.guestbook-entry-content > p:last-child{
+    margin-bottom: 0;
+}
