@@ -4,12 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="styles/lib/fonts/montserrat/Montserrat.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="./styles/lib/fonts/montserrat/Montserrat.css">
+    <link rel="stylesheet" href="./styles/main.css">
 
     <title>Gästebuch</title>
   </head>
   <body>
-    <h1>Gästebuch</h1>
+    <div class="container">
+      <h1 class="guestbook-heading">Gästebuch</h1>
+
+      <form class="form">
+        <!-- NAME -->
+        <label class="guestbook-entry-label" for="name">Dein Name:</label>
+        <input class="guestbook-entry-input" type="text" id="name" name="name">
+
+        <!-- TITLE -->
+        <label class="guestbook-entry-label" for="title">Titel des Eintrags:</label>
+        <input class="guestbook-entry-input" type="text" id="title" name="title">
+
+        <!-- COMMENT -->
+        <label class="guestbook-entry-label" for="comment">Inhalt des Eintrags:</label>
+        <textarea class="guestbook-entry-input" id="comment" name="comment" rows="4"></textarea>
+
+        <div class="guestbook-form-buttons">
+          <input class="button" type="reset" value="&#10007; Zurücksetzen">
+          <input class="button" type="submit" value="&#10004; Absenden">
+        </div>
+      </form>
+
+
+
+
+    </div>
   </body>
 </html>

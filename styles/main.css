@@ -1,4 +1,86 @@
+:root{
+    --color-orange: #e97200;
+    --color-organe-hover: #b35802;
+    --color-white: #fffcf7;
+    --color-black: #4c5866;
+}
+
 * {
     box-sizing: border-box;
 }
 
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: var(--color-white);
+}
+
+.container{
+    max-width: 45rem;
+    padding-inline: 2rem;
+    margin: 0 auto;
+}
+
+.guestbook-heading{
+    color: var(--color-orange);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+}
+
+.guestbook-entry-label{
+    display: block;
+    color: var(--color-black);
+    font-size: 1rem;
+
+}
+
+.guestbook-entry-input{
+    -webkit-appearance: none;
+    appearance: none;
+    /* Browser Agent OFF */
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: var(--color-black);
+    border: 0.0625rem solid var(--color-black);
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.guestbook-entry-input:focus{
+    outline: none;
+    border: 0.0625rem solid var(--color-orange);
+}
+
+.guestbook-form-buttons{
+    text-align: center;
+
+}
+
+.button{
+    -webkit-appearance: none;
+    appearance: none;
+    /* Browser Agent OFF */
+    cursor: pointer;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: 0 solid var(--color-orange);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+
+}
+
+.button:hover{
+    background-color: var(--color-organe-hover);
+}
