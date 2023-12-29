@@ -29,6 +29,7 @@ body{
     text-align: center;
     font-size: 3rem;
     letter-spacing: 0.1em;
+    margin-block: 2rem;
 }
 
 .guestbook-entry-label{
@@ -90,15 +91,16 @@ body{
     appearance: none;
     /* Browser Agent OFF */
     border: 0.03125rem solid var(--color-black);
+    margin-block: 2rem;
 }
 
 .guestbook-entry{
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.25rem;
     background-color: white;
     color: var(--color-black);
     border: 0.0625rem solid var(--color-black);
     border-radius: 0.5rem;
-    margin-block: 1rem;
+    margin-block: 1.25rem;
 }
 
 .guestbook-entry-header{
@@ -132,4 +134,45 @@ body{
 
 .guestbook-entry-content > p:last-child{
     margin-bottom: 0;
+}
+
+.guestbook-pagination{
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.guestbook-pagination-li{
+
+}
+
+.guestbook-pagination-a{
+    display: block;
+    min-width: 2.5rem;
+    background-color: var(--color-orange);
+    color: white;
+    line-height: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.guestbook-pagination-a:hover{
+    background-color: var(--color-organe-hover);
+}
+
+.guestbook-pagination-active,
+.guestbook-pagination-active:hover{
+    background-color: var(--color-black);
+}
+
+.guestbook-footer{
+    margin: 2rem;
+    color: var(--color-black);
+    text-align: center;
 }
