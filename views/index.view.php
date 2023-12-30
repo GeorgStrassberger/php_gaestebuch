@@ -1,3 +1,4 @@
+global$entries;
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -33,39 +34,18 @@
       </form>
 
       <hr class="guestbook-separator">
-      <!-- ENTRY ONE -->
-      <div class="guestbook-entry">
-        <div class="guestbook-entry-header">
-          <h3 class="guestbook-entry-title">Das hier ist ENTRY ONE</h3>
-          <span class="guestbook-entry-author">Max Mustermann</span>
-        </div>
-        <div class="guestbook-entry-content">
-          <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-        </div>
-      </div>
-      <!-- ENTRY TWO -->
-      <div class="guestbook-entry">
-        <div class="guestbook-entry-header">
-          <h3 class="guestbook-entry-title">Das hier ist ENTRY TWO</h3>
-          <span class="guestbook-entry-author">Max Mustermann</span>
-        </div>
-        <div class="guestbook-entry-content">
-          <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-        </div>
-      </div>
-      <!-- ENTRY THREE -->
-      <div class="guestbook-entry">
-        <div class="guestbook-entry-header">
-          <h3 class="guestbook-entry-title">Das hier ist ENTRY THREE</h3>
-          <span class="guestbook-entry-author">Max Mustermann</span>
-        </div>
-        <div class="guestbook-entry-content">
-          <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet.</p>
-        </div>
-      </div>
+
+        <?php foreach ($entries AS $entry): ?>
+            <div class="guestbook-entry">
+                <div class="guestbook-entry-header">
+                    <h3 class="guestbook-entry-title"><?php echo e($entry['title']); ?></h3>
+                    <span class="guestbook-entry-author"><?php echo e($entry['name']); ?></span>
+                </div>
+                <div class="guestbook-entry-content">
+                    <p><?php echo e($entry['comment']); ?></p>
+                </div>
+            </div>
+        <?php endforeach  ?>
 
       <!-- Pagination -->
       <ul class="guestbook-pagination">
