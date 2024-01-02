@@ -9,3 +9,6 @@ $stmt->execute();
 $entries = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 require(__DIR__ . '/views/index.view.php');
+require(__DIR__ . '/submit.php');
+
+

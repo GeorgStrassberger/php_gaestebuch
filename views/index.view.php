@@ -1,4 +1,3 @@
-global$entries;
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -14,7 +13,7 @@ global$entries;
     <div class="container">
       <h1 class="guestbook-heading">Gästebuch</h1>
 
-      <form class="form">
+      <form method="POST" action="submit.php">
         <!-- NAME -->
         <label class="guestbook-entry-label" for="name">Dein Name:</label>
         <input class="guestbook-entry-input" type="text" id="name" name="name">
@@ -42,10 +41,24 @@ global$entries;
                     <span class="guestbook-entry-author"><?php echo e($entry['name']); ?></span>
                 </div>
                 <div class="guestbook-entry-content">
-                    <p><?php echo e($entry['comment']); ?></p>
+                    <!-- Entfernen der unnötigen Zeilenumbrüche und Leerzeichen. -->
+                    <?php
+                        $paragraphs = explode("\n", $entry['comment']);
+                        $filteredParagraphs = [];
+                        foreach ($paragraphs AS $paragraph){
+                            $paragraph = trim($paragraph);
+                            if(strlen($paragraph) > 0){
+                                $filteredParagraphs[] = $paragraph;
+                            }
+                        }
+                    ?>
+                    <!-- Bereinigtes Kommentar Ausgeben -->
+                    <?php foreach ($filteredParagraphs as $p): ?>
+                        <p><?php echo e($p); ?></p>
+                    <?php endforeach;  ?>
                 </div>
             </div>
-        <?php endforeach  ?>
+        <?php endforeach;  ?>
 
       <!-- Pagination -->
       <ul class="guestbook-pagination">
