@@ -1,8 +1,8 @@
 <?php
 
 global $pdo;
-require(__DIR__ . '/inc/db-connect.php');
-require(__DIR__ . '/inc/util.php');
+require_once(__DIR__ . '/inc/db-connect.php');
+require_once(__DIR__ . '/inc/util.php');
 
 if(!empty($_POST)){
     $name = '';
@@ -26,7 +26,12 @@ if(!empty($_POST)){
         $stmt->bindValue('title', $title);
         $stmt->bindValue('comment', $comment);
         $stmt->execute();
+
+        echo '<a href="index.php">Zurück zum Gästebuch.</a>';
+        die();
     }
-    echo '<a href="index.php">Zurück zum Gästebuch.</a>';
 }
 
+$errorMessage = 'Es ist ein Fehler aufgetreten ...';
+
+require_once(__DIR__ . '/index.php');
