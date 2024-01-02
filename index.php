@@ -4,13 +4,9 @@ require_once(__DIR__ . '/inc/util.php');
 require_once(__DIR__ . '/inc/db-connect.php');
 
 $perPage = 5;
-$currentPage = 1;
-
-if(isset($_GET['page'])){
-    $currentPage = @(int) $_GET['page'];
-    if($currentPage <= 0 ){
-        $currentPage = 1;
-    }
+$currentPage = @(int) ($_GET['page'] ?? 1); // shortform with coalescent-Operator (??)
+if($currentPage <= 0){
+    $currentPage = 1;
 }
 
 // Anzahl der Einträge aus der DB laden.

@@ -13,7 +13,11 @@
     <div class="container">
       <h1 class="guestbook-heading">Gästebuch</h1>
 
-      <form method="POST" action="submit.php">
+        <?php if(!empty($_GET['success'])): ?>
+            <h2>Eintrage erfolgreich hinzugefügt.</h2>
+        <?php endif; ?>
+
+        <form method="POST" action="submit.php">
           <?php if(isset($errorMessage)): ?>
             <p><?php echo e($errorMessage); ?></p>
           <?php endif; ?>
